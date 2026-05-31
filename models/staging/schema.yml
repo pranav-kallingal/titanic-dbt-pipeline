@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_titanic
+    columns:
+      - name: passenger_id
+        tests:
+          - not_null
+          - unique
+      - name: survived
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: sex
+        tests:
+          - accepted_values:
+              values: ['male', 'female']
