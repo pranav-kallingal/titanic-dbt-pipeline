@@ -1,15 +1,20 @@
-Welcome to your new dbt project!
+# Titanic dbt Pipeline
 
-### Using the starter project
+End-to-end dbt project built on the Titanic dataset.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Stack
+- dbt Core 1.10
+- DuckDB (local warehouse)
 
+## Models
+- `stg_titanic` — cleans raw data, casts types
+- `mart_survival_by_class` — survival rate by passenger class
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Tests
+- 8 automated data quality tests (not_null, unique, accepted_values)
+
+## How to run
+dbt seed
+dbt run
+dbt test
+dbt docs generate && dbt docs serve
